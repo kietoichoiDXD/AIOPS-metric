@@ -9,6 +9,15 @@
 - `memory_usage_bytes` đi vào vùng nguy hiểm hơn từ `2026-06-01 18:03:30Z` và đạt p99 từ `2026-06-01 19:38:00Z`.
 - Hard failure xuất hiện vào `2026-06-01 19:59:00Z` với `OutOfMemoryError imminent: available heap < 5%` và `2026-06-01 19:59:02Z` với `Container OOMKilled: memory limit exceeded`.
 
+### Anomaly detection comparison
+
+| Method | First detection | Notes |
+|---|---|---|
+| Rolling Z-score | `2026-06-01 08:07:30Z` | Nhạy với lệch điểm đơn lẻ, dễ giải thích, tốt để bắt tín hiệu sớm trên memory/GC |
+| Isolation Forest | `2026-06-01 00:28:00Z` | Rất nhạy với mẫu đa biến; cần diễn giải cẩn thận vì có thể bắt sớm các spike lẻ không bền vững |
+
+Trong incident này, Z-score hữu ích hơn cho việc đánh dấu silent window vì nó bám vào xu hướng memory/GC rõ ràng và dễ giải thích cho on-call. Isolation Forest bắt được bất thường đa biến rất sớm, nhưng nếu không thêm tiêu chí sustained anomaly thì nó dễ tạo tín hiệu sớm quá mức so với trực giác vận hành.
+
 ## WHERE
 
 ### Metric signal sớm nhất
