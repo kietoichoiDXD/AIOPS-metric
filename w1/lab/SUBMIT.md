@@ -57,7 +57,7 @@ Nhóm phân tích `24 giờ telemetry` gồm `metrics + logs`, kết thúc tại
 
 Điều này cho thấy có một khoảng suy giảm âm thầm rất dài trước khi alert phản ứng.
 
-## Phản Tư Nhóm
+## 
 
 Phần khó nhất của bài là xác định đâu mới là thời điểm anomaly thực sự có ý nghĩa theo góc nhìn vận hành. Một số phương pháp có thể cho kết quả rất sớm, nhưng không phải timestamp nào cũng đủ thuyết phục để đưa vào postmortem. Thử thách lớn nhất không chỉ là chạy anomaly detection, mà còn là nối kết quả với hành vi service, log pattern và chuỗi lan truyền lỗi sao cho hợp lý với một SRE hoặc reviewer.
 
