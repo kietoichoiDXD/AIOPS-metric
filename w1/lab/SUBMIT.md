@@ -65,18 +65,19 @@ Phần khó nhất của bài là xác định đâu mới là thời điểm an
 
 Nếu có thêm thời gian, nhóm sẽ tune `CUSUM` kỹ hơn để giảm false positive và thêm một pipeline online nhẹ để correlation giữa memory drift, GC pressure, và log template cache-eviction. Bài học lớn nhất là alert thường chỉ là đoạn cuối của câu chuyện, còn anomaly thật sự đã bắt đầu từ nhiều giờ trước. Nếu không kết hợp metrics và log-pattern analysis, khoảng lặng đó rất dễ bị bỏ sót.
 
-## Đóng Góp Cá Nhân
+## Group Contributions
 
-| Thành viên | Vai trò | Đóng góp |
-|---|---|---|
-| Thành viên 1 | Lead analyst | Tổng hợp timeline sự cố và đối chiếu bằng chứng từ metrics và logs. |
-| Thành viên 2 | Phân tích metrics | Xác thực memory, GC, latency, 5xx và restart pattern từ file CSV gốc. |
-| Thành viên 3 | Phân tích log | Trích xuất template và xác nhận tín hiệu JVM/cache sớm từ log JSONL. |
-| Thành viên 4 | Phát hiện bất thường | So sánh EWMA, Rolling Z-score, Isolation Forest và CUSUM cho dạng sự cố này. |
-| Thành viên 5 | Trực quan hóa | Chuẩn hóa và làm sạch các biểu đồ cuối dùng trong report và notebook. |
-| Thành viên 6 | Tài liệu | Viết và chỉnh sửa phần postmortem cuối cùng và narrative nộp bài. |
-| Thành viên 7 | Review và thuyết trình | Kiểm tra tính nhất quán giữa các deliverable và chuẩn bị talking points. |
-
+| STT | Thành viên | Vai trò & đóng góp chính | Tỷ lệ |
+|---:|---|---|---:|
+| 1 | Trần Quốc Kiệt | **Pipeline Architect** – Thiết kế sơ đồ tự động hóa quy trình. | 11.1% |
+| 2 | Phạm Vũ Khánh Trường | **Pipeline Engineer** – Triển khai sơ đồ & biên soạn tài liệu vận hành. | 11.1% |
+| 3 | Nguyễn Đức Hào | **ML Engineer** – Cài đặt lõi Multivariate Isolation Forest. | 11.1% |
+| 4 | Đặng Thị Ngọc Thảo | **Log Specialist** – Xử lý log `.jsonl` & cấu hình Drain3/TF-IDF. | 11.1% |
+| 5 | Bùi Lê Anh Tuấn | **Consultant** – Chủ trì phản biện, so sánh & lựa chọn phương pháp. | 11.1% |
+| 6 | Ngô Thanh Kiên | **Consultant** – Nghiên cứu lọc nhiễu & tối ưu tham số. | 11.1% |
+| 7 | Nguyễn T. Hoàng Thịnh | **Technical Writer** – Tổng hợp số liệu & viết báo cáo `FINDINGS.md`. | 11.1% |
+| 8 | Lê Hải Khoa | **Technical Writer** – Tổng hợp Group Reflection & viết `SUBMIT.md`. | 11.1% |
+| 9 | Nguyễn P. Anh Bảo | **Designer** – Thiết kế slide báo cáo & trực quan hóa kết quả. | 11.1% |
 ## Cấu Trúc Repo
 
 ```text
